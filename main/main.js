@@ -1,36 +1,49 @@
-let currentSlide = 0;
-const slider = document.querySelector(".slider");
-const slides = document.querySelectorAll(".slide");
-const dots = document.querySelectorAll(".dot");
+// let currentSlide = 0;
+// const slider = document.querySelector(".slider");
+// const slides = document.querySelectorAll(".slide");
+// const dots = document.querySelectorAll(".dot");
 
-function showSlide(index) {
-    slider.style.transform = `translateX(-${index * 100}%)`;
-    dots.forEach((dot) => dot.classList.remove("active"));
-    dots[index].classList.add("active");
-}
+// function showSlide(index) {
+//     slider.style.transform = `translateX(-${index * 100}%)`;
+//     dots.forEach((dot) => dot.classList.remove("active"));
+//     dots[index].classList.add("active");
+// }
 
-function nextSlide() {
-    currentSlide = (currentSlide + 1) % slides.length;
-    showSlide(currentSlide);
-}
+// function nextSlide() {
+//     currentSlide = (currentSlide + 1) % slides.length;
+//     showSlide(currentSlide);
+// }
 
-function prevSlide() {
-    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-    showSlide(currentSlide);
-}
+// function prevSlide() {
+//     currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+//     showSlide(currentSlide);
+// }
 
-dots.forEach((dot, index) => {
-    dot.addEventListener("click", () => {
-        currentSlide = index;
-        showSlide(currentSlide);
+// dots.forEach((dot, index) => {
+//     dot.addEventListener("click", () => {
+//         currentSlide = index;
+//         showSlide(currentSlide);
+//     });
+// });
+// showSlide(currentSlide);
+// setInterval(nextSlide, 2500);
+
+
+
+
+
+$(document).ready(function () {
+    $('.slider').slick({
+        dots: true,
+        arrows: false,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        speed: 1000
     });
 });
 
 
 
-
-showSlide(currentSlide);
-setInterval(nextSlide, 2500);
 
 // =====================Main======================
 const hexagons = Array.from(document.querySelectorAll(".hexagon"));
@@ -77,7 +90,7 @@ function showMainImage() {
             floatingimage.classList.add("display-block");
             setTimeout(() => {
                 floatingimage.classList.remove("display-block");
-            }, 1000);
+            }, 1300);
         });
     });
 }
