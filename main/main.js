@@ -86,7 +86,8 @@ function showMainImage() {
         hexagon.addEventListener("click", (e) => {
             console.log(e.currentTarget.className);
             theimage.src = hexagon.querySelector("img").src;
-            hexagon.classList.add("fading");
+            // hexagon.classList.add("fading");
+
             floatingimage.classList.add("display-block");
             setTimeout(() => {
                 floatingimage.classList.remove("display-block");
